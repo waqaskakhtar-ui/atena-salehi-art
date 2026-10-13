@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atena Salehi | Contemporary Fine Artist &bull; Founder of Artestan Gallery</title>
+  <meta name="description" content="Original Art for Exceptional Spaces. Expressive contemporary paintings by Toronto fine artist Atena Salehi. Curated luxury art placement, residential staging, and private acquisitions across Toronto and the GTA.">
+  
+  <!-- Modern Luxury Typography: Cinzel, Italiana, Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       MODERN LUXURY DESIGN SYSTEM & TOKENS
+       ========================================================================== */
+    :root {
+      --bg-base: #FAF8F5;              /* Ultra-warm gallery ivory */
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F3EFE8;
+      --bg-card: #F6F3EC;
+      --bg-dark: #121110;
+
+      --text-primary: #151413;         /* Deep rich charcoal */
+      --text-secondary: #58534C;       /* Warm editorial taupe */
+      --text-muted: #8E877D;
+      --text-inverse: #F8F5EE;
+
+      --gold-primary: #A88D5E;         /* Contemporary champagne gold */
+      --gold-light: #E8DCC4;
+      --gold-dark: #8F7243;
+      --gold-glow: rgba(168, 141, 94, 0.22);
+      --gold-border: rgba(168, 141, 94, 0.38);
+
+      --border-hairline: #E8E2D6;
+      --border-medium: #DDD5C5;
+
+      --font-display: 'Cinzel', 'Italiana', serif;
+      --font-editorial: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+      --container-max: 1720px;         /* Expansive full-width layout */
+      --site-gutter: clamp(1.5rem, 4.5vw, 5.5rem);
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+
+      --shadow-ambient: 0 4px 25px rgba(21, 20, 19, 0.04);
+      --shadow-float: 0 20px 50px -10px rgba(21, 20, 19, 0.1);
+      --shadow-elevated: 0 35px 80px -15px rgba(21, 20, 19, 0.16);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 15.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.35s var(--ease-out-expo);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      outline: none;
+      transition: all 0.35s var(--ease-out-expo);
+    }
+
+    /* Full-width container utility */
+    .full-width-container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--site-gutter);
+    }
+
+    /* Section Fades & Ambient Lighting Transitions */
+    .section-wrap {
+      position: relative;
+      padding: clamp(5rem, 8vw, 8.5rem) 0;
+      overflow: hidden;
+    }
+
+    .section-wrap::before,
+    .section-wrap::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 90px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .section-wrap::before {
+      top: 0;
+      background: linear-gradient(180deg, var(--bg-base) 0%, rgba(250, 248, 245, 0) 100%);
+    }
+
+    .section-wrap::after {
+      bottom: 0;
+      background: linear-gradient(0deg, var(--bg-base) 0%, rgba(250, 248, 245, 0) 100%);
+    }
+
+    .section-hairline-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--border-hairline) 20%, var(--gold-border) 50%, var(--border-hairline) 80%, transparent 100%);
+      margin: 0 auto;
+    }
+
+    /* Editorial Typography Hierarchy */
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      position: relative;
+    }
+
+    .eyebrow-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .eyebrow-line::after {
+      content: '';
+      width: 38px;
+      height: 1px;
+      background-color: var(--gold-primary);
+    }
+
+    .heading-display {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+    }
+
+    .heading-editorial {
+      font-family: var(--font-editorial);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    .lead-text {
+      font-size: clamp(0.95rem, 1.1vw, 1.12rem);
+      line-height: 1.85;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* Buttons & Interactive Elements */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2.2rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .btn-gold {
+      background-color: var(--gold-primary);
+      color: #FFFFFF;
+      border: 1px solid var(--gold-primary);
+      box-shadow: 0 4px 18px var(--gold-glow);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-dark);
+      border-color: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(168, 141, 94, 0.35);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+      background-color: rgba(168, 141, 94, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+    }
+
+    /* Scroll Reveal Animation Utilities */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.12s; }
+    .delay-2 { transition-delay: 0.24s; }
+    .delay-3 { transition-delay: 0.36s; }
+    .delay-4 { transition-delay: 0.48s; }
+
+    /* ==========================================================================
+       1. ULTRA-MODERN STICKY NAVBAR
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 248, 245, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-hairline);
+      transition: all 0.35s ease;
+    }
+
+    .header-inner {
+      height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .brand-monogram {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--gold-primary);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .brand-name-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-artist-name {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      letter-spacing: 0.18em;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--text-primary);
+    }
+
+    .brand-artist-role {
+      font-size: 0.6rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    .header-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+      list-style: none;
+    }
+
+    .header-nav-link {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--text-primary);
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .header-nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: var(--gold-primary);
+      transition: width 0.3s var(--ease-out-expo);
+    }
+
+    .header-nav-link:hover::after,
+    .header-nav-link.active::after {
+      width: 100%;
+    }
+
+    .header-nav-link:hover {
+      color: var(--gold-primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .burger-btn {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .burger-btn span {
+      display: block;
+      width: 26px;
+      height: 1.5px;
+      background-color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 94px;
+      left: 0;
+      width: 100%;
+      background: rgba(250, 248, 245, 0.98);
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 2.8rem var(--site-gutter);
+      transform: translateY(-130%);
+      transition: transform 0.45s var(--ease-out-expo);
+      z-index: 999;
+      box-shadow: var(--shadow-float);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+    }
+
+    .mobile-nav-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .mobile-nav-menu a {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       2. EXPANSIVE FULL-WIDTH HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(4.5rem, 7vw, 7.5rem) 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: clamp(3rem, 6vw, 6.5rem);
+      align-items: center;
+    }
+
+    .hero-content {
+      padding-right: 1.5rem;
+    }
+
+    .hero-main-title {
+      font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+      line-height: 1.02;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-gallery-affiliation {
+      font-family: var(--font-editorial);
+      font-size: clamp(1.4rem, 2vw, 1.85rem);
+      font-style: italic;
+      color: var(--gold-primary);
+      margin-bottom: 2.2rem;
+      font-weight: 400;
+    }
+
+    .hero-gold-separator {
+      width: 58px;
+      height: 2px;
+      background: var(--gold-primary);
+      margin-bottom: 2rem;
+    }
+
+    .hero-positioning-title {
+      font-family: var(--font-editorial);
+      font-size: clamp(2rem, 2.7vw, 2.65rem);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-desc {
+      max-width: 520px;
+      margin-bottom: 2.6rem;
+    }
+
+    .hero-btn-row {
+      display: flex;
+      gap: 1.3rem;
+      flex-wrap: wrap;
+    }
+
+    /* Hero Big Cinematic Visual */
+    .hero-visual-container {
+      position: relative;
+    }
+
+    .hero-frame-card {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      aspect-ratio: 16 / 11;
+      background: #EAE4DA;
+      box-shadow: var(--shadow-elevated);
+      transition: transform 0.8s var(--ease-out-expo);
+    }
+
+    .hero-frame-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.01);
+      transition: transform 1.2s var(--ease-out-expo);
+    }
+
+    .hero-frame-card:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Floating Staging Badge */
+    .floating-curation-pill {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(18, 17, 16, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-left: 3px solid var(--gold-primary);
+      padding: 0.9rem 1.5rem;
+      color: #FFFFFF;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      border-radius: 2px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      animation: floatBadge 6s ease-in-out infinite alternate;
+    }
+
+    .floating-curation-pill span {
+      color: var(--gold-light);
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* ==========================================================================
+       3. ABOUT ATENA & SELECTED WORKS (EDITORIAL SPLIT WITH UNCLIPPED PORTRAIT)
+       ========================================================================== */
+    .about-works-section {
+      background: linear-gradient(180deg, var(--bg-base) 0%, #F5F1E9 50%, var(--bg-base) 100%);
+      padding: clamp(5.5rem, 8vw, 9rem) 0;
+      position: relative;
+    }
+
+    .about-works-container {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: clamp(3.5rem, 6vw, 6.5rem);
+      align-items: start;
+    }
+
+    /* Unclipped Portrait & Bio */
+    .about-card-split {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2.8rem;
+      align-items: start;
+    }
+
+    .about-portrait-wrap {
+      position: relative;
+    }
+
+    /* FIXED: Framing portrait so it is fully visible, never cutting her face or hands */
+    .about-portrait-frame {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: var(--shadow-float);
+      background-color: #E2DDD3;
+      border: 1px solid var(--border-hairline);
+      position: relative;
+    }
+
+    .about-portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%; /* Perfectly centers Atena's face and posture without cropping */
+      filter: contrast(103%);
+      transition: transform 0.9s var(--ease-out-expo);
+    }
+
+    .about-portrait-frame:hover img {
+      transform: scale(1.035);
+    }
+
+    .about-portrait-caption {
+      margin-top: 0.9rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .about-bio-col h3 {
+      font-size: clamp(2rem, 2.5vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 1.4rem;
+    }
+
+    .about-bio-col p {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-bio-col .btn {
+      margin-top: 1.2rem;
+    }
+
+    /* Selected Works Grid */
+    .selected-works-area {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .works-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.2rem;
+    }
+
+    .works-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .artwork-card-item {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .artwork-card-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .artwork-image-frame {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 2px;
+      background-color: #E8E2D7;
+      border: 1px solid var(--border-hairline);
+      box-shadow: var(--shadow-ambient);
+      margin-bottom: 1.1rem;
+      position: relative;
+    }
+
+    .artwork-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out-expo);
+    }
+
+    .artwork-card-item:hover .artwork-image-frame img {
+      transform: scale(1.07);
+    }
+
+    .artwork-status-pill {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      border-radius: 1px;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.92);
+      color: #2F6F4E;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .status-sold-pill {
+      background: rgba(20, 19, 18, 0.88);
+      color: #EAE5DC;
+    }
+
+    .artwork-card-title {
+      font-family: var(--font-editorial);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .artwork-card-meta {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .artwork-inquire-cta {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    .artwork-card-item:hover .artwork-inquire-cta {
+      text-decoration: underline;
+    }
+
+    .works-bottom-actions {
+      align-self: flex-end;
+    }
+
+    /* ==========================================================================
+       4. LUXURY ART PLACEMENT SECTION (FULL WIDTH & CINEMATIC)
+       ========================================================================== */
+    .placement-section {
+      padding: clamp(6rem, 9vw, 9.5rem) 0;
+      position: relative;
+    }
+
+    .placement-split {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(3.5rem, 6vw, 6.5rem);
+      align-items: center;
+    }
+
+    .placement-cinematic-visual {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: var(--shadow-elevated);
+      background-color: #E6E0D5;
+    }
+
+    .placement-cinematic-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s var(--ease-out-expo);
+    }
+
+    .placement-cinematic-visual:hover img {
+      transform: scale(1.03);
+    }
+
+    .placement-info-area h2 {
+      font-size: clamp(2.3rem, 3.4vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 1.6rem;
+    }
+
+    .placement-info-area .lead-text {
+      margin-bottom: 3.2rem;
+    }
+
+    /* 5 Horizontal Audience Glass Cards */
+    .audience-glass-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 3.2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .audience-glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-hairline);
+      border-radius: 2px;
+      padding: 1.3rem 0.6rem;
+      text-align: center;
+      transition: all 0.35s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .audience-glass-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(168, 141, 94, 0.15);
+      background: #FFFFFF;
+    }
+
+    .audience-icon-wrap {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .audience-icon-wrap svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gold-primary);
+      stroke-width: 1.4;
+      fill: none;
+    }
+
+    .audience-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    /* ==========================================================================
+       5. COMPLIMENTARY ART SELECTION (HOW IT WORKS TIMELINE)
+       ========================================================================== */
+    .consultation-timeline-section {
+      background: linear-gradient(180deg, var(--bg-base) 0%, #F5F1E8 50%, var(--bg-base) 100%);
+      padding: clamp(6rem, 8vw, 9rem) 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .timeline-intro-box {
+      max-width: 820px;
+      margin: 0 auto 5rem;
+    }
+
+    .timeline-intro-box h2 {
+      font-size: clamp(2.3rem, 3.4vw, 3.3rem);
+      margin-bottom: 1.2rem;
+    }
+
+    .timeline-steps-flow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline-step-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem;
+      position: relative;
+    }
+
+    .step-orb {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--border-medium);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.6rem;
+      box-shadow: var(--shadow-ambient);
+      position: relative;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .timeline-step-item:hover .step-orb {
+      border-color: var(--gold-primary);
+      transform: translateY(-5px) scale(1.06);
+      box-shadow: 0 14px 30px rgba(168, 141, 94, 0.22);
+    }
+
+    .step-orb-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      letter-spacing: 0.1em;
+      margin-bottom: 2px;
+    }
+
+    .step-orb svg {
+      width: 25px;
+      height: 25px;
+      stroke: var(--gold-primary);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .step-orb-text {
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      line-height: 1.5;
+      font-weight: 500;
+      max-width: 180px;
+    }
+
+    .timeline-arrow-bridge {
+      width: 44px;
+      color: var(--border-medium);
+      font-size: 1.3rem;
+      margin-top: -2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+    }
+
+    .timeline-step-item:hover + .timeline-arrow-bridge {
+      color: var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       6. TRADE PARTNER BENEFITS & ARTIST PHILOSOPHY (SPLIT CARD SECTION)
+       ========================================================================== */
+    .partner-philosophy-section {
+      padding: clamp(6rem, 8vw, 9rem) 0;
+      position: relative;
+    }
+
+    .partner-phil-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 3.8rem;
+      align-items: stretch;
+    }
+
+    /* Left: Trade Partner Card with Dining Staging Visual */
+    .trade-card-full {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: 2px;
+      padding: clamp(2.5rem, 4vw, 4rem);
+      box-shadow: var(--shadow-ambient);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .trade-inner-top {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 2.2rem;
+    }
+
+    .trade-photo-frame {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: var(--shadow-ambient);
+      background-color: #E5DFC9;
+    }
+
+    .trade-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .trade-photo-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .trade-text-area h3 {
+      font-size: clamp(2rem, 2.5vw, 2.5rem);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .trade-text-area p {
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .trade-check-items {
+      list-style: none;
+      margin-bottom: 2.4rem;
+    }
+
+    .trade-check-items li {
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .trade-check-items li svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold-primary);
+      stroke-width: 2.2;
+      fill: none;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Right: Artist Philosophy Textured Card */
+    .philosophy-card-full {
+      background: linear-gradient(135deg, rgba(25, 23, 21, 0.94) 0%, rgba(42, 38, 33, 0.88) 100%),
+                  url('assets/ego-eclipse.jpg') center/cover no-repeat;
+      border: 1px solid rgba(168, 141, 94, 0.35);
+      border-radius: 2px;
+      padding: clamp(3rem, 5vw, 4.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      box-shadow: var(--shadow-elevated);
+      color: #FFFFFF;
+    }
+
+    .philosophy-card-full::before {
+      content: '';
+      position: absolute;
+      top: 1.8rem;
+      bottom: 1.8rem;
+      left: 1.8rem;
+      right: 1.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      pointer-events: none;
+    }
+
+    .philosophy-card-full .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .philosophy-card-full h3 {
+      font-size: clamp(2.3rem, 3.2vw, 3.2rem);
+      line-height: 1.18;
+      color: #FAF6ED;
+      margin-bottom: 1.8rem;
+    }
+
+    .philosophy-quote-p {
+      font-family: var(--font-editorial);
+      font-size: clamp(1.15rem, 1.4vw, 1.38rem);
+      line-height: 1.85;
+      font-style: italic;
+      color: #EDE7DC;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+    }
+
+    .philosophy-origin-line {
+      margin-top: 2.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* ==========================================================================
+       7. INTERACTIVE ROOM STAGING VISUALIZER (IN-SITU GALLERY EXPERIENCE)
+       ========================================================================== */
+    .visualizer-section {
+      background: linear-gradient(180deg, var(--bg-base) 0%, #F3EFE7 50%, var(--bg-base) 100%);
+      padding: clamp(6rem, 8vw, 9rem) 0;
+      position: relative;
+    }
+
+    .visualizer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.8rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .visualizer-tab-pills {
+      display: flex;
+      gap: 0.6rem;
+      background: #FFFFFF;
+      padding: 0.4rem;
+      border-radius: 40px;
+      border: 1px solid var(--border-hairline);
+      box-shadow: var(--shadow-ambient);
+    }
+
+    .v-pill {
+      padding: 0.55rem 1.4rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      border-radius: 30px;
+      color: var(--text-secondary);
+      transition: all 0.35s var(--ease-out-expo);
+    }
+
+    .v-pill.active {
+      background-color: var(--gold-primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px var(--gold-glow);
+    }
+
+    .visualizer-stage-canvas {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: var(--shadow-elevated);
+      border: 1px solid var(--border-hairline);
+      background-color: #E5DFD4;
+    }
+
+    .visualizer-stage-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.6s ease;
+    }
+
+    /* Dynamically Hung Artwork */
+    .visualizer-hung-art {
+      position: absolute;
+      top: 22%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 27%;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.58), 0 0 0 5px #151312;
+      border-radius: 1px;
+      overflow: hidden;
+      transition: all 0.6s var(--ease-out-expo);
+      background: #111;
+    }
+
+    .visualizer-hung-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .visualizer-overlay-bar {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      box-shadow: var(--shadow-float);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .visualizer-bar-title {
+      font-family: var(--font-editorial);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-right: 0.6rem;
+    }
+
+    .visualizer-bar-specs {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       8. FINAL CTA STATEMENT SECTION
+       ========================================================================== */
+    .final-cta-section {
+      padding: clamp(6.5rem, 9vw, 9.5rem) 0 clamp(5.5rem, 8vw, 8rem) 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .final-cta-card {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .final-cta-card h2 {
+      font-size: clamp(2.6rem, 4vw, 3.8rem);
+      margin-bottom: 1.2rem;
+      line-height: 1.15;
+    }
+
+    .final-cta-card .lead-text {
+      margin-bottom: 3.2rem;
+    }
+
+    .final-cta-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1.3rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.8rem;
+    }
+
+    .final-contact-credentials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 2.5rem;
+    }
+
+    .final-contact-credentials a:hover {
+      color: var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       9. REFINED FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-dark);
+      color: var(--text-inverse);
+      padding: clamp(5rem, 7vw, 7rem) 0 3rem 0;
+      position: relative;
+    }
+
+    .footer-grid-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: clamp(2.5rem, 4vw, 4.5rem);
+      margin-bottom: 4.5rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-brand-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 1.6rem;
+    }
+
+    .footer-brand-desc {
+      color: #9C968D;
+      font-size: 0.88rem;
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 340px;
+    }
+
+    .footer-col-header {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .footer-links-col {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.95rem;
+    }
+
+    .footer-links-col a {
+      color: #9C968D;
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+      font-weight: 300;
+    }
+
+    .footer-links-col a:hover {
+      color: var(--gold-light);
+      padding-left: 5px;
+    }
+
+    .footer-newsletter-p {
+      color: #9C968D;
+      font-size: 0.84rem;
+      line-height: 1.65;
+      margin-bottom: 1.3rem;
+      font-weight: 300;
+    }
+
+    .footer-newsletter-input-group {
+      display: flex;
+    }
+
+    .footer-email-input {
+      flex: 1;
+      padding: 0.85rem 1.1rem;
+      background: #1E1D1B;
+      border: 1px solid #322F2A;
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      outline: none;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .footer-email-input:focus {
+      border-color: var(--gold-primary);
+    }
+
+    .footer-email-btn {
+      background-color: var(--gold-primary);
+      color: #FFFFFF;
+      padding: 0 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .footer-email-btn:hover {
+      background-color: var(--gold-dark);
+    }
+
+    .footer-bar-bottom {
+      border-top: 1px solid #252320;
+      padding-top: 2.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #726C64;
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-social-strip {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .footer-social-strip a {
+      color: #9C968D;
+    }
+
+    .footer-social-strip a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ==========================================================================
+       10. INTERACTIVE CONSULTATION & ARTWORK MODALS
+       ========================================================================== */
+    .modal-backdrop-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(18, 17, 16, 0.78);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .modal-backdrop-wrap.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-container-card {
+      background-color: var(--bg-base);
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 3px;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--border-medium);
+      position: relative;
+      transform: translateY(30px) scale(0.97);
+      transition: all 0.4s var(--ease-out-expo);
+      padding: clamp(2.2rem, 4vw, 3.5rem);
+    }
+
+    .modal-backdrop-wrap.active .modal-container-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close-trigger {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+
+    .modal-close-trigger:hover {
+      background: rgba(0,0,0,0.12);
+      transform: rotate(90deg);
+    }
+
+    .form-two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .form-input-field {
+      margin-bottom: 1.3rem;
+    }
+
+    .form-input-field label {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input-field input,
+    .form-input-field select,
+    .form-input-field textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border-medium);
+      border-radius: 2px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      transition: border-color 0.3s ease;
+      outline: none;
+    }
+
+    .form-input-field input:focus,
+    .form-input-field select:focus,
+    .form-input-field textarea:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+    }
+
+    /* Artwork Lightbox Specifics */
+    .artwork-modal-card {
+      max-width: 860px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.8rem;
+      align-items: center;
+      padding: clamp(2rem, 3.5vw, 3rem);
+    }
+
+    .artwork-modal-media-frame {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #111;
+      border-radius: 2px;
+    }
+
+    .artwork-modal-media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ==========================================================================
+       11. RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 1200px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .hero-content {
+        padding-right: 0;
+      }
+      .about-works-container {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+      }
+      .placement-split {
+        grid-template-columns: 1fr;
+        gap: 3.8rem;
+      }
+      .partner-phil-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .footer-grid-top {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.5rem;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .header-nav-links, .header-cta {
+        display: none;
+      }
+      .burger-btn {
+        display: flex;
+      }
+      .about-card-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .about-portrait-wrap {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .works-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .trade-inner-top {
+        grid-template-columns: 1fr;
+      }
+      .audience-glass-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .timeline-steps-flow {
+        flex-direction: column;
+        gap: 2.8rem;
+      }
+      .timeline-arrow-bridge {
+        transform: rotate(90deg);
+        margin: 0;
+      }
+      .artwork-modal-card {
+        grid-template-columns: 1fr;
+      }
+      .form-two-cols {
+        grid-template-columns: 1fr;
+      }
+      .final-contact-credentials {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .works-grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .audience-glass-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid-top {
+        grid-template-columns: 1fr;
+      }
+      .footer-bar-bottom {
+        flex-direction: column;
+        gap: 1.4rem;
+        text-align: center;
+      }
+      .visualizer-overlay-bar {
+        width: 90%;
+        flex-direction: column;
+        gap: 0.8rem;
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="full-width-container">
+      <div class="header-inner">
+        
+        <a href="#home" class="brand-mark" aria-label="Atena Salehi Fine Art">
+          <div class="brand-monogram">AS</div>
+          <div class="brand-name-group">
+            <span class="brand-artist-name">Atena Salehi</span>
+            <span class="brand-artist-role">Contemporary Fine Artist</span>
+          </div>
+        </a>
+
+        <nav aria-label="Main Navigation">
+          <ul class="header-nav-links">
+            <li><a href="#home" class="header-nav-link active">Home</a></li>
+            <li><a href="#about" class="header-nav-link">About</a></li>
+            <li><a href="#works" class="header-nav-link">Works</a></li>
+            <li><a href="#placement" class="header-nav-link">Art Placement</a></li>
+            <li><a href="#visualizer" class="header-nav-link">In Situ</a></li>
+            <li><a href="#contact" class="header-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-gold btn-sm header-cta" onclick="openConsultationModal('header-cta')">
+            Partnership Inquiry
+          </button>
+          <button class="burger-btn" id="burgerToggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-menu">
+        <li><a href="#home" onclick="closeDrawer()">Home</a></li>
+        <li><a href="#about" onclick="closeDrawer()">About Atena</a></li>
+        <li><a href="#works" onclick="closeDrawer()">Selected Works</a></li>
+        <li><a href="#placement" onclick="closeDrawer()">Luxury Art Placement</a></li>
+        <li><a href="#visualizer" onclick="closeDrawer()">In Situ Visualizer</a></li>
+        <li><a href="#contact" onclick="closeDrawer()">Contact &amp; Inquiries</a></li>
+      </ul>
+      <button class="btn btn-gold" style="width: 100%;" onclick="closeDrawer(); openConsultationModal('mobile-inquiry')">
+        Partnership Inquiry
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================================================================
+         1. HERO SECTION (EXPANSIVE FULL-WIDTH & CINEMATIC)
+         ====================================================================== -->
+    <section class="section-wrap hero-section" id="home">
+      <div class="full-width-container">
+        <div class="hero-grid">
+          
+          <div class="hero-content reveal">
+            <span class="eyebrow eyebrow-line">Contemporary Fine Artist</span>
+            <h1 class="hero-main-title heading-display">Atena Salehi</h1>
+            <div class="hero-gallery-affiliation">Founder of Artestan Gallery</div>
+            
+            <div class="hero-gold-separator"></div>
+            
+            <h2 class="hero-positioning-title">Original Art for Exceptional Spaces</h2>
+            <p class="lead-text hero-desc">
+              Expressive contemporary paintings for private collectors, luxury interiors, 
+              and curated residential placements across Toronto and the Greater Toronto Area.
+            </p>
+
+            <div class="hero-btn-row">
+              <a href="#works" class="btn btn-gold">
+                View Available Works
+              </a>
+              <a href="#placement" class="btn btn-outline">
+                Explore Art Placement
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual-container reveal delay-2">
+            <div class="hero-frame-card">
+              <img 
+                src="assets/hero-living-room.jpg" 
+                onerror="this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85'"
+                alt="Original contemporary painting displayed above a luxury cream sofa in a Toronto residence"
+                loading="eager"
+              >
+              <div class="floating-curation-pill">
+                Yorkville Luxury Residence &bull; <span>"Ego Eclipse" (48 &times; 60 in)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-hairline-divider"></div>
+
+    <!-- ======================================================================
+         2. ABOUT ATENA & SELECTED WORKS (UNCLIPPED PORTRAIT & EXPANSIVE GRID)
+         ====================================================================== -->
+    <section class="section-wrap about-works-section" id="about">
+      <div class="full-width-container">
+        <div class="about-works-container">
+          
+          <!-- Column 1: Unclipped Studio Portrait & Meditation Narrative -->
+          <div class="about-card-split reveal">
+            <div class="about-portrait-wrap">
+              <div class="about-portrait-frame">
+                <!-- Using vertical portrait (2048 x 3071) with center-top framing so head, face, posture & hands are fully visible -->
+                <img 
+                  src="assets/atena-portrait-alt.jpg" 
+                  onerror="this.src='https://atenasalehi.com/wp-content/uploads/2024/09/cr5_8560-1.jpg'"
+                  alt="Atena Salehi, Toronto contemporary fine artist"
+                >
+              </div>
+              <div class="about-portrait-caption">Atena Salehi &bull; Toronto Studio</div>
+            </div>
+
+            <div class="about-bio-col">
+              <span class="eyebrow">About Atena</span>
+              <h3 class="heading-editorial">Art Rooted in Emotion, Intuition &amp; Transformation</h3>
+              
+              <p>
+                Atena Salehi is a Toronto-based contemporary artist whose work explores identity, consciousness, transformation, and the inner human experience.
+              </p>
+              <p>
+                Her paintings are developed through an intuitive process influenced by meditation, Persian poetry, personal narrative, and the expressive power of colour and texture.
+              </p>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">
+                Raised in Isfahan and Tehran and trained at the University of Art and Architecture, Atena harmonizes timeless poetic reverence with bold contemporary spatial presence.
+              </p>
+
+              <button class="btn btn-outline btn-sm" onclick="openBioModal()">
+                About Atena &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Column 2: Selected Works Grid (Bigger Images & Status Pills) -->
+          <div class="selected-works-area reveal delay-2" id="works">
+            <div class="works-header-flex">
+              <div>
+                <span class="eyebrow">Curated Collection</span>
+                <h3 class="heading-display" style="font-size: 2.15rem;">Selected Works</h3>
+              </div>
+              <a href="#placement" class="btn btn-outline btn-sm">
+                Inquire For Staging
+              </a>
+            </div>
+
+            <div class="works-grid-3">
+              
+              <!-- Artwork 1: Ego Eclipse -->
+              <div class="artwork-card-item" onclick="openArtworkModal('Ego Eclipse', 'Acrylic & Mixed Media on Canvas', '48 × 60 in', 'Available', 'assets/ego-eclipse.jpg', 'https://atenasalehi.com/wp-content/uploads/2024/09/1-4.jpg')">
+                <div class="artwork-image-frame">
+                  <img 
+                    src="assets/ego-eclipse.jpg" 
+                    onerror="this.src='https://atenasalehi.com/wp-content/uploads/2024/09/1-4.jpg'"
+                    alt="Ego Eclipse by Atena Salehi" 
+                    loading="lazy"
+                  >
+                  <span class="artwork-status-pill">Available</span>
+                </div>
+                <h4 class="artwork-card-title">Ego Eclipse</h4>
+                <div class="artwork-card-meta">Acrylic on Canvas<br>48 &times; 60 in</div>
+                <span class="artwork-inquire-cta">View Details &rarr;</span>
+              </div>
+
+              <!-- Artwork 2: Inner Passage -->
+              <div class="artwork-card-item" onclick="openArtworkModal('Inner Passage', 'Acrylic & Gold Leaf on Canvas', '36 × 48 in', 'Available', 'assets/inner-passage.jpg', 'https://atenasalehi.com/wp-content/uploads/2024/09/13-2.jpg')">
+                <div class="artwork-image-frame">
+                  <img 
+                    src="assets/inner-passage.jpg" 
+                    onerror="this.src='https://atenasalehi.com/wp-content/uploads/2024/09/13-2.jpg'"
+                    alt="Inner Passage by Atena Salehi" 
+                    loading="lazy"
+                  >
+                  <span class="artwork-status-pill">Available</span>
+                </div>
+                <h4 class="artwork-card-title">Inner Passage</h4>
+                <div class="artwork-card-meta">Acrylic on Canvas<br>36 &times; 48 in</div>
+                <span class="artwork-inquire-cta">View Details &rarr;</span>
+              </div>
+
+              <!-- Artwork 3: The Seeker -->
+              <div class="artwork-card-item" onclick="openArtworkModal('The Seeker', 'Acrylic & Earth Pigments on Canvas', '48 × 60 in', 'Sold', 'assets/the-seeker.jpg', 'https://atenasalehi.com/wp-content/uploads/2024/09/11-1.jpg')">
+                <div class="artwork-image-frame">
+                  <img 
+                    src="assets/the-seeker.jpg" 
+                    onerror="this.src='https://atenasalehi.com/wp-content/uploads/2024/09/11-1.jpg'"
+                    alt="The Seeker by Atena Salehi" 
+                    loading="lazy"
+                  >
+                  <span class="artwork-status-pill status-sold-pill">Sold</span>
+                </div>
+                <h4 class="artwork-card-title">The Seeker</h4>
+                <div class="artwork-card-meta">Acrylic on Canvas<br>48 &times; 60 in</div>
+                <span class="artwork-inquire-cta" style="color: var(--text-muted);">Archived Piece &rarr;</span>
+              </div>
+
+            </div>
+
+            <div class="works-bottom-actions">
+              <button class="btn btn-outline btn-sm" onclick="openConsultationModal('Full Catalog Request')">
+                View Full Collection
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-hairline-divider"></div>
+
+    <!-- ======================================================================
+         3. LUXURY ART PLACEMENT (EXPANSIVE VISUAL & 5 AUDIENCE TILES)
+         ====================================================================== -->
+    <section class="section-wrap placement-section" id="placement">
+      <div class="full-width-container">
+        <div class="placement-split">
+          
+          <div class="placement-cinematic-visual reveal">
+            <img 
+              src="assets/placement-room.jpg" 
+              onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=85'"
+              alt="Curated contemporary artwork placed in an architectural Toronto luxury interior"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="placement-info-area reveal delay-2">
+            <span class="eyebrow eyebrow-line">Luxury Art Placement</span>
+            <h2 class="heading-editorial">Fine Art for Luxury Real Estate &amp; Interior Design</h2>
+            
+            <p class="lead-text">
+              Original artwork can transform the feeling of a space. Through Artestan Gallery, a curated selection of Atena Salehi's original paintings is available for temporary placement in luxury residential properties, professionally staged interiors, and selected open houses.
+            </p>
+
+            <!-- 5 Audience Badges matching Creative Brief -->
+            <div class="audience-glass-grid">
+              
+              <div class="audience-glass-card">
+                <div class="audience-icon-wrap">
+                  <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <div class="audience-title">Real Estate Professionals</div>
+              </div>
+
+              <div class="audience-glass-card">
+                <div class="audience-icon-wrap">
+                  <svg viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="9" rx="2"></rect><path d="M6 17v3M18 17v3M4 11V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path></svg>
+                </div>
+                <div class="audience-title">Home Staging Companies</div>
+              </div>
+
+              <div class="audience-glass-card">
+                <div class="audience-icon-wrap">
+                  <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"></path></svg>
+                </div>
+                <div class="audience-title">Interior Designers</div>
+              </div>
+
+              <div class="audience-glass-card">
+                <div class="audience-icon-wrap">
+                  <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <div class="audience-title">Private Homeowners</div>
+              </div>
+
+              <div class="audience-glass-card">
+                <div class="audience-icon-wrap">
+                  <svg viewBox="0 0 24 24"><polygon points="6 3 18 3 22 9 12 22 2 9 6 3"></polygon><polyline points="2 9 12 13 22 9"></polyline></svg>
+                </div>
+                <div class="audience-title">Art Collectors</div>
+              </div>
+
+            </div>
+
+            <button class="btn btn-gold" onclick="openConsultationModal('Discover Art Placement')">
+              Discover Art Placement
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-hairline-divider"></div>
+
+    <!-- ======================================================================
+         4. COMPLIMENTARY CONSULTATION (4-STEP GUIDED TIMELINE)
+         ====================================================================== -->
+    <section class="section-wrap consultation-timeline-section" id="consultation">
+      <div class="full-width-container">
+        
+        <div class="timeline-intro-box reveal">
+          <span class="eyebrow">Complimentary Consultation</span>
+          <h2 class="heading-editorial">A Curated Selection for Your Space</h2>
+          <p class="lead-text">
+            Share photographs of your property or interior project and receive a complimentary selection of up to three original paintings chosen to complement the architecture, colour palette, and overall aesthetic of the space.
+          </p>
+        </div>
+
+        <div class="timeline-steps-flow">
+          
+          <!-- Step 1 -->
+          <div class="timeline-step-item reveal delay-1">
+            <div class="step-orb">
+              <span class="step-orb-num">01</span>
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+            <p class="step-orb-text">Share photographs of your space</p>
+          </div>
+
+          <div class="timeline-arrow-bridge">&rarr;</div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step-item reveal delay-2">
+            <div class="step-orb">
+              <span class="step-orb-num">02</span>
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <p class="step-orb-text">Receive a curated art selection</p>
+          </div>
+
+          <div class="timeline-arrow-bridge">&rarr;</div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step-item reveal delay-3">
+            <div class="step-orb">
+              <span class="step-orb-num">03</span>
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <p class="step-orb-text">Choose your preferred artwork</p>
+          </div>
+
+          <div class="timeline-arrow-bridge">&rarr;</div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step-item reveal delay-4">
+            <div class="step-orb">
+              <span class="step-orb-num">04</span>
+              <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <p class="step-orb-text">Arrange flexible short-term placement</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-hairline-divider"></div>
+
+    <!-- ======================================================================
+         5. TRADE PARTNERS & ARTIST PHILOSOPHY (SPLIT CARD SECTION)
+         ====================================================================== -->
+    <section class="section-wrap partner-philosophy-section" id="trade">
+      <div class="full-width-container">
+        <div class="partner-phil-grid">
+          
+          <!-- Left: Trade Partners -->
+          <div class="trade-card-full reveal">
+            <div>
+              <div class="trade-inner-top">
+                <div class="trade-photo-frame">
+                  <img 
+                    src="assets/trade-dining.jpg" 
+                    onerror="this.src='https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1000&q=85'"
+                    alt="Contemporary artwork commanding an architectural dining room interior"
+                  >
+                </div>
+
+                <div class="trade-text-area">
+                  <span class="eyebrow">For Trade Partners</span>
+                  <h3 class="heading-editorial">Collaborate with Confidence</h3>
+                  <p>
+                    We offer flexible collaboration opportunities designed for luxury real estate and interior professionals.
+                  </p>
+                </div>
+              </div>
+
+              <ul class="trade-check-items">
+                <li>
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Preferential introductory rental rates</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Flexible short-term placements</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Coordinated delivery and collection</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Rental fee waived on qualifying artwork sales</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Commission opportunities for eligible partners</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Original artwork available for purchase</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <button class="btn btn-gold btn-sm" onclick="openConsultationModal('Trade Partnership')">
+                Partnership Inquiry
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Artist Philosophy Textured Card -->
+          <div class="philosophy-card-full reveal delay-2">
+            <span class="eyebrow">Artist Philosophy</span>
+            <h3 class="heading-editorial">Beyond Decoration</h3>
+            
+            <p class="philosophy-quote-p">
+              &ldquo;For Atena, painting is not simply an aesthetic practice. Each work begins with a process of stillness, reflection, and intuitive exploration, allowing colour, movement, and texture to develop organically. The result is work intended not only to be seen, but to be experienced.&rdquo;
+            </p>
+
+            <div class="philosophy-origin-line">
+              Atena Salehi &bull; Isfahan &bull; Tehran &bull; Toronto
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-hairline-divider"></div>
+
+    <!-- ======================================================================
+         6. IN-SITU ROOM STAGING VISUALIZER (INTERACTIVE SCALE EXPERIENCE)
+         ====================================================================== -->
+    <section class="section-wrap visualizer-section" id="visualizer">
+      <div class="full-width-container">
+        
+        <div class="visualizer-header reveal">
+          <div>
+            <span class="eyebrow eyebrow-line">Interactive Scale Experience</span>
+            <h3 class="heading-display" style="font-size: 2.2rem;">View Artwork In Exceptional Spaces</h3>
+            <p class="lead-text" style="font-size: 0.95rem; margin-top: 0.35rem;">
+              Explore how Atena Salehi’s original textured canvases command modern luxury interiors.
+            </p>
+          </div>
+
+          <div class="visualizer-tab-pills" role="tablist">
+            <button class="v-pill active" onclick="switchVisualizerWork('ego-eclipse', this)">
+              Ego Eclipse (48 &times; 60)
+            </button>
+            <button class="v-pill" onclick="switchVisualizerWork('inner-passage', this)">
+              Inner Passage (36 &times; 48)
+            </button>
+            <button class="v-pill" onclick="switchVisualizerWork('whispers-persia', this)">
+              Whispers of Persia (40 &times; 50)
+            </button>
+          </div>
+        </div>
+
+        <div class="visualizer-stage-canvas reveal delay-1">
+          <img 
+            id="vRoomImg" 
+            class="visualizer-stage-bg" 
+            src="assets/hero-living-room.jpg" 
+            onerror="this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85'"
+            alt="Luxury interior setting"
+          >
+          
+          <div class="visualizer-hung-art" id="vHungArt">
+            <img 
+              id="vArtImg" 
+              src="assets/ego-eclipse.jpg" 
+              onerror="this.src='https://atenasalehi.com/wp-content/uploads/2024/09/1-4.jpg'"
+              alt="Staged artwork"
+            >
+          </div>
+
+          <div class="visualizer-overlay-bar">
+            <div>
+              <strong class="visualizer-bar-title" id="vTitle">Ego Eclipse</strong>
+              <span class="visualizer-bar-specs" id="vSpecs">48 &times; 60 in &bull; Acrylic on Canvas &bull; Available for Staging</span>
+            </div>
+            <button class="btn btn-gold btn-sm" onclick="openConsultationModal('Staged Visualizer Inquiry')">
+              Inquire For This Space
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-hairline-divider"></div>
+
+    <!-- ======================================================================
+         7. FINAL CALL TO ACTION (STATEMENT BANNER)
+         ====================================================================== -->
+    <section class="section-wrap final-cta-section" id="contact">
+      <div class="full-width-container">
+        <div class="final-cta-card reveal">
+          
+          <span class="eyebrow">Connect &bull; Collaborate &bull; Collect</span>
+          <h2 class="heading-display">Bring Original Art Into Your Space</h2>
+          
+          <p class="lead-text">
+            Whether you are collecting art, staging a luxury property, or designing an exceptional interior, we welcome the opportunity to collaborate.
+          </p>
+
+          <div class="final-cta-btn-group">
+            <a href="#works" class="btn btn-gold">View Available Works</a>
+            <button class="btn btn-outline" onclick="openConsultationModal('Art Placement Inquiry')">Art Placement</button>
+            <button class="btn btn-outline" onclick="openConsultationModal('Partnership Inquiry')">Partnership Inquiry</button>
+          </div>
+
+          <div class="final-contact-credentials">
+            <span>Toronto, Ontario</span>
+            <span>&bull;</span>
+            <a href="mailto:artestangallery@gmail.com">artestangallery@gmail.com</a>
+            <span>&bull;</span>
+            <a href="https://atenasalehi.com" target="_blank" rel="noopener">atenasalehi.com</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="full-width-container">
+      
+      <div class="footer-grid-top">
+        
+        <div>
+          <div class="footer-brand-title">Atena Salehi</div>
+          <div class="footer-brand-sub">Founder of Artestan Gallery</div>
+          <p class="footer-brand-desc">
+            Original contemporary paintings celebrating stillness, emotion, and Persian poetic tradition. Tailored luxury art placement for Toronto residences and trade professionals.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="footer-col-header">Navigation</h5>
+          <ul class="footer-links-col">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Atena</a></li>
+            <li><a href="#works">Selected Works</a></li>
+            <li><a href="#placement">Luxury Art Placement</a></li>
+            <li><a href="#consultation">Consultation Process</a></li>
+            <li><a href="#visualizer">In Situ Visualizer</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-col-header">Services</h5>
+          <ul class="footer-links-col">
+            <li><a href="javascript:void(0)" onclick="openConsultationModal('Residential Placement')">Residential Art Curation</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultationModal('Staging Firms')">Staging &amp; Model Homes</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultationModal('Broker Placement')">Broker Open House Art</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultationModal('Private Acquisitions')">Private Acquisitions</a></li>
+            <li><a href="javascript:void(0)" onclick="openConsultationModal('Bespoke Commissions')">Bespoke Commissions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="footer-col-header">Private Inquiries</h5>
+          <p class="footer-newsletter-p">
+            Join Atena Salehi’s private collector preview circle for notifications regarding newly completed paintings and seasonal releases.
+          </p>
+          <form class="footer-newsletter-input-group" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" class="footer-email-input" placeholder="Your email address" required>
+            <button type="submit" class="footer-email-btn">Join</button>
+          </form>
+          <div id="newsletterSuccessMsg" style="display:none; color: var(--gold-light); font-size: 0.76rem; margin-top: 0.75rem;">
+            Thank you for subscribing to the collector circle.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bar-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> Atena Salehi &bull; Artestan Gallery. All Rights Reserved. Toronto, Ontario.
+        </div>
+        <div class="footer-social-strip">
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://facebook.com/atenagallery" target="_blank" rel="noopener">Facebook</a>
+          <a href="mailto:artestangallery@gmail.com">artestangallery@gmail.com</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL 1: CONSULTATION & PARTNERSHIP INQUIRY
+       ======================================================================== -->
+  <div class="modal-backdrop-wrap" id="consultationModal" role="dialog" aria-modal="true">
+    <div class="modal-container-card">
+      <button class="modal-close-trigger" onclick="closeConsultationModal()">&times;</button>
+      
+      <span class="eyebrow" id="modalContextHeading">Consultation Request</span>
+      <h3 class="heading-editorial" style="font-size: 2.2rem; margin-bottom: 0.6rem;">Request a Consultation</h3>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        Provide details about your space or staging project. Atena Salehi will prepare a curated recommendation of up to three works.
+      </p>
+
+      <form onsubmit="handleConsultationSubmit(event)">
+        <div class="form-two-cols">
+          <div class="form-input-field">
+            <label>Name *</label>
+            <input type="text" placeholder="Your Full Name" required>
+          </div>
+          <div class="form-input-field">
+            <label>Company / Firm</label>
+            <input type="text" placeholder="Brokerage or Design Studio">
+          </div>
+        </div>
+
+        <div class="form-two-cols">
+          <div class="form-input-field">
+            <label>Email *</label>
+            <input type="email" placeholder="email@address.com" required>
+          </div>
+          <div class="form-input-field">
+            <label>Phone</label>
+            <input type="tel" placeholder="(416) 000-0000">
+          </div>
+        </div>
+
+        <div class="form-two-cols">
+          <div class="form-input-field">
+            <label>Project Location</label>
+            <input type="text" placeholder="Toronto, GTA, or neighborhood">
+          </div>
+          <div class="form-input-field">
+            <label>Project Type *</label>
+            <select required>
+              <option>Luxury Real Estate Staging</option>
+              <option>Interior Design Placement</option>
+              <option>Open House Placement</option>
+              <option>Private Collector Acquisition</option>
+              <option>Bespoke Commission</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-input-field">
+          <label>Space Details &amp; Aesthetic Scheme</label>
+          <textarea rows="3" placeholder="Tell us about the space, wall dimensions, palette, or timeline..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%;">
+          Submit Request
+        </button>
+
+        <div id="consultationSubmitFeedback" style="display:none; margin-top: 1.2rem; color: #2E7D32; font-size: 0.86rem; text-align: center;">
+          Thank you. Your inquiry has been routed to artestangallery@gmail.com. We will be in touch shortly.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: ARTWORK LIGHTBOX MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop-wrap" id="artworkModal" role="dialog" aria-modal="true">
+    <div class="modal-container-card artwork-modal-card">
+      <button class="modal-close-trigger" onclick="closeArtworkModal()">&times;</button>
+      
+      <div class="artwork-modal-media-frame">
+        <img id="artModalImg" src="" alt="Artwork detail view">
+      </div>
+
+      <div>
+        <span class="eyebrow" id="artModalStatus">Available</span>
+        <h3 class="heading-editorial" id="artModalTitle" style="font-size: 2.3rem; margin-bottom: 0.4rem;">Title</h3>
+        <p style="font-size: 0.82rem; color: var(--gold-primary); margin-bottom: 1.4rem;" id="artModalSpecs">Acrylic on Canvas &bull; 48 &times; 60 in</p>
+        
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+          Original painting by Atena Salehi. Rooted in meditation and Persian poetic tradition, developed organically through layered acrylics and textured earth tones. Available for private collection acquisition or luxury placement in curated Toronto residences.
+        </p>
+
+        <button class="btn btn-gold btn-sm" onclick="closeArtworkModal(); openConsultationModal('Inquire: ' + document.getElementById('artModalTitle').textContent)">
+          Inquire About This Piece
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 3: ARTIST BIOGRAPHY
+       ======================================================================== -->
+  <div class="modal-backdrop-wrap" id="bioModal" role="dialog" aria-modal="true">
+    <div class="modal-container-card">
+      <button class="modal-close-trigger" onclick="closeBioModal()">&times;</button>
+      
+      <span class="eyebrow">Artist Biography</span>
+      <h3 class="heading-editorial" style="font-size: 2.3rem; margin-bottom: 1.4rem;">Atena Salehi</h3>
+      
+      <p style="font-size: 0.9rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1rem;">
+        Born in Isfahan and raised in Tehran, Atena Salehi grew up in an environment where creativity and education flourished. From early childhood, she was captivated by the vibrant colors of Persian vitrail and miniature artistry, and mesmerized by her father's free-style calligraphy.
+      </p>
+      <p style="font-size: 0.9rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1rem;">
+        Atena earned her formal education at the University of Art and Architecture in Tehran and taught painting at the Reza Abbasi Museum. Influenced by her aunt, a miniature artist and disciple of Master Farshchian, Atena's work weaves historical reverence with contemporary textural abstraction.
+      </p>
+      <p style="font-size: 0.9rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 2rem;">
+        Now based in Toronto, Atena's paintings are spiritual explorations inspired by the poetry of Mawlana Mohammad Jalaluddin Balkhi (Rumi), meditation, and the human search for transcendence. Through Artestan Gallery, her works grace private collections and prime residential architectural spaces across Ontario.
+      </p>
+
+      <button class="btn btn-outline btn-sm" onclick="closeBioModal(); openConsultationModal('Artist Collaboration')">
+        Connect with Atena
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       JAVASCRIPT: SCROLL REVEAL, STAGING VISUALIZER & MODALS
+       ======================================================================== -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // 1. Scroll Reveal Engine (IntersectionObserver)
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 2. Mobile Drawer Navigation
+    const burgerToggle = document.getElementById('burgerToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    burgerToggle.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('open');
+    });
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove('open');
+    }
+
+    // 3. Modals Management
+    const consultationModal = document.getElementById('consultationModal');
+    const artworkModal = document.getElementById('artworkModal');
+    const bioModal = document.getElementById('bioModal');
+
+    function openConsultationModal(context = '') {
+      document.getElementById('modalContextHeading').textContent = context || 'Consultation Request';
+      consultationModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConsultationModal() {
+      consultationModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function openArtworkModal(title, medium, dimensions, status, localImg, fallbackImg) {
+      document.getElementById('artModalTitle').textContent = title;
+      document.getElementById('artModalSpecs').innerHTML = medium + ' &bull; ' + dimensions;
+      document.getElementById('artModalStatus').textContent = status;
+      const img = document.getElementById('artModalImg');
+      img.src = localImg;
+      img.onerror = () => { img.src = fallbackImg; };
+      artworkModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeArtworkModal() {
+      artworkModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function openBioModal() {
+      bioModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBioModal() {
+      bioModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close on backdrop click
+    [consultationModal, artworkModal, bioModal].forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeConsultationModal();
+        closeArtworkModal();
+        closeBioModal();
+        closeDrawer();
+      }
+    });
+
+    // 4. Forms Submission Handlers
+    function handleConsultationSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('consultationSubmitFeedback');
+      feedback.style.display = 'block';
+      setTimeout(() => {
+        e.target.reset();
+        closeConsultationModal();
+        feedback.style.display = 'none';
+      }, 2500);
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      document.getElementById('newsletterSuccessMsg').style.display = 'block';
+      e.target.reset();
+    }
+
+    // 5. In-Situ Staging Visualizer Switcher
+    const visualizerCatalog = {
+      'ego-eclipse': {
+        title: 'Ego Eclipse',
+        specs: '48 × 60 in • Acrylic on Canvas • Available for Staging',
+        artUrl: 'assets/ego-eclipse.jpg',
+        roomUrl: 'assets/hero-living-room.jpg'
+      },
+      'inner-passage': {
+        title: 'Inner Passage',
+        specs: '36 × 48 in • Acrylic & Gold Leaf • Available for Staging',
+        artUrl: 'assets/inner-passage.jpg',
+        roomUrl: 'assets/placement-room.jpg'
+      },
+      'whispers-persia': {
+        title: 'Whispers of Persia',
+        specs: '40 × 50 in • Earth Pigments & Acrylic • Curated Selection',
+        artUrl: 'assets/whispers-persia.jpg',
+        roomUrl: 'assets/trade-dining.jpg'
+      }
+    };
+
+    function switchVisualizerWork(key, btnEl) {
+      const data = visualizerCatalog[key];
+      if (!data) return;
+
+      document.querySelectorAll('.v-pill').forEach(btn => btn.classList.remove('active'));
+      btnEl.classList.add('active');
+
+      const canvasArt = document.getElementById('vHungArt');
+      canvasArt.style.opacity = '0';
+      canvasArt.style.transform = 'translateX(-50%) scale(0.96)';
+
+      setTimeout(() => {
+        document.getElementById('vArtImg').src = data.artUrl;
+        document.getElementById('vRoomImg').src = data.roomUrl;
+        document.getElementById('vTitle').textContent = data.title;
+        document.getElementById('vSpecs').textContent = data.specs;
+
+        canvasArt.style.opacity = '1';
+        canvasArt.style.transform = 'translateX(-50%) scale(1)';
+      }, 240);
+    }
+  </script>
+</body>
+</html>
